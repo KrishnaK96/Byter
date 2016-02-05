@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     var minusButtonPressed: Bool = false
     var dec2BinButton: Bool = true
     var bin2DecButton: Bool = false
@@ -65,6 +65,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //for hiding the keyboard
+        self.textField.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,5 +149,22 @@ class ViewController: UIViewController {
         str = formatBinaryNumber(str)
         return ""
     }
+    
+        //close keyboard if user taps outside of keyboard
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //close keyboard if user taps "return" key
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
+    //paste this under the button
+    //self.view.endEditing(true)
+
+
 }
 
