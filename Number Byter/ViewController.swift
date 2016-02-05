@@ -10,18 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
     var minusButtonPressed: Bool = false
+    var dec2BinButton: Bool = true
+    var bin2DecButton: Bool = false
     var tempString: String = "" //used to store user inputted number before adding a "-""
+    
     @IBOutlet var textField: UITextField!
     @IBOutlet var resultField: UILabel!
-    @IBOutlet var baseSwitch: UISwitch!
-    @IBAction func convertButton(sender: AnyObject) {
-        //if number is a positive decimal
-        if minusButtonPressed == false {
-            resultField.text = decToBin()
-        } else {
-            negaDecToBin()
+    @IBOutlet var baseSegmentedControl: UISegmentedControl!
+    
+    //controls which base to change from and change to
+    @IBAction func baseControlChanged(sender: AnyObject) {
+        switch baseSegmentedControl.selectedSegmentIndex
+        {
+            //decimal to binary
+        case 0:
+            dec2BinButton = true
+            bin2DecButton = false
+            print("Converting decimal to binary")
+            
+            //binary to decimal
+        case 1:
+            dec2BinButton = false
+            bin2DecButton = true
+            print("converting binary to decimal")
+        default:
+            break
         }
-        
+    }
+    
+    @IBAction func convertButton(sender: AnyObject) {
+        if dec2BinButton {
+            //if number is a positive decimal
+            if minusButtonPressed == false {
+                resultField.text = decToBin()
+            } else {
+                negaDecToBin()
+            }
+        } else if bin2DecButton {
+            resultField.text = String(convertFromBintoDec(textField.text!))
+        }
     }
     
     //makes the number the user inputted negative
@@ -63,8 +90,9 @@ class ViewController: UIViewController {
     //runs the process of converting from decimal to binary
     func decToBin() -> String {
         let input = getInput()
-        let binaryNumber = convertFromDecToBin(input)
+        var binaryNumber = convertFromDecToBin(input)
         //print(binaryNumber)
+        binaryNumber = formatBinaryNumber(binaryNumber)
         return binaryNumber
     }
     
@@ -80,10 +108,12 @@ class ViewController: UIViewController {
         while binNum.characters.count % 4 != 0 {
             binNum.insert("0", atIndex: binNum.startIndex)
         }
-        if binNum.characters.first == "0" {
-            var arr = [Character](binNum.characters)
-            arr[0] = "1"
-            binNum = arr.description
+        if minusButtonPressed == true {
+            if binNum.characters.first == "0" {
+                var arr = [Character](binNum.characters)
+                arr[0] = "1"
+                binNum = arr.description
+            }
         }
         print("String representation of binary string: " + binNum)
         return binNum
@@ -105,7 +135,7 @@ class ViewController: UIViewController {
         }
         print(str)
         //convert back to decimal and add 1
-        var num = convertFromBintoDec(str) + 1
+        let num = convertFromBintoDec(str) + 1
         
         //convert back to finished twos complement
         str = convertFromDecToBin(num)

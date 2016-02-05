@@ -75,10 +75,6 @@
                                     <action selector="convertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZpB-UG-CDN"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjl-3d-eTC">
-                                <rect key="frame" x="345" y="144" width="51" height="31"/>
-                                <animations/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Krishna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt5-mx-kFr">
                                 <rect key="frame" x="106" y="707" width="172" height="21"/>
                                 <animations/>
@@ -97,6 +93,20 @@
                                     <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dER-I1-dQm"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y5L-lv-t2Z">
+                                <rect key="frame" x="147" y="74" width="121" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="ozM-Jg-QoP"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Dec2Bin"/>
+                                    <segment title="Bin2Dec"/>
+                                </segments>
+                                <connections>
+                                    <action selector="baseControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="B4v-8q-Oyx"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -105,25 +115,25 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pt5-mx-kFr" secondAttribute="bottom" constant="8" symbolic="YES" id="5k4-wy-3Cn"/>
                             <constraint firstItem="Pt5-mx-kFr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="86" id="8PV-iZ-4Qo"/>
                             <constraint firstItem="dYP-M2-TYE" firstAttribute="top" secondItem="c4Q-fd-Za3" secondAttribute="bottom" constant="8" symbolic="YES" id="Gwj-wf-H30"/>
+                            <constraint firstItem="Y5L-lv-t2Z" firstAttribute="centerX" secondItem="laI-TI-th5" secondAttribute="centerX" id="Jk8-FI-cu4"/>
                             <constraint firstItem="dYP-M2-TYE" firstAttribute="leading" secondItem="dS8-E7-THf" secondAttribute="leading" id="Kd0-dH-wmW"/>
                             <constraint firstItem="a1l-Zv-4Nq" firstAttribute="top" secondItem="dS8-E7-THf" secondAttribute="bottom" constant="20" id="Ooq-96-jgW"/>
                             <constraint firstItem="a2t-hT-9Gv" firstAttribute="leading" secondItem="dYP-M2-TYE" secondAttribute="trailing" constant="8" symbolic="YES" id="Qnr-OB-r6J"/>
                             <constraint firstItem="laI-TI-th5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TS0-or-Es9"/>
                             <constraint firstItem="a2t-hT-9Gv" firstAttribute="centerX" secondItem="Pt5-mx-kFr" secondAttribute="centerX" id="VVq-Np-nll"/>
                             <constraint firstAttribute="trailing" secondItem="laI-TI-th5" secondAttribute="trailing" id="Zjr-Hh-GI2"/>
-                            <constraint firstItem="pjl-3d-eTC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gTF-Fv-JGN"/>
                             <constraint firstItem="c4Q-fd-Za3" firstAttribute="top" secondItem="laI-TI-th5" secondAttribute="bottom" constant="53" id="iG9-xa-IoM"/>
                             <constraint firstItem="a1l-Zv-4Nq" firstAttribute="leading" secondItem="dS8-E7-THf" secondAttribute="leading" id="j7q-kb-b2V"/>
                             <constraint firstItem="dS8-E7-THf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="293" id="m3M-vQ-dWH"/>
                             <constraint firstItem="laI-TI-th5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="owB-ou-bx5"/>
+                            <constraint firstItem="Y5L-lv-t2Z" firstAttribute="top" secondItem="laI-TI-th5" secondAttribute="bottom" constant="10" id="qrb-Wz-Udf"/>
                             <constraint firstItem="a1l-Zv-4Nq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rbb-77-Pt5"/>
-                            <constraint firstItem="pjl-3d-eTC" firstAttribute="bottom" secondItem="a2t-hT-9Gv" secondAttribute="bottom" id="tS2-A7-phB"/>
                             <constraint firstItem="dYP-M2-TYE" firstAttribute="baseline" secondItem="a2t-hT-9Gv" secondAttribute="baseline" id="xmZ-75-ee8"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="baseSwitch" destination="pjl-3d-eTC" id="S5b-pS-cdN"/>
+                        <outlet property="baseSegmentedControl" destination="Y5L-lv-t2Z" id="Arq-PU-KDd"/>
                         <outlet property="resultField" destination="a1l-Zv-4Nq" id="o28-bV-FK9"/>
                         <outlet property="textField" destination="dYP-M2-TYE" id="J1N-OQ-XbW"/>
                     </connections>
