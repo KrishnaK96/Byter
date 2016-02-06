@@ -58,7 +58,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             resultField.text = String(convertFromBintoDec(getInput()))
         } else if dec2HexButton {
             let newHexNum = HexNumber(userInput: textField.text!)
-            resultField.text = newHexNum.getTest()
+//            newHexNum.convertToDec()
+//            resultField.text = String(newHexNum.getDecNum())
+            resultField.text = newHexNum.convertToHex()
         }
     }
     
@@ -176,10 +178,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-
-    //paste this under the button
-    //self.view.endEditing(true)
-
 
 }
 

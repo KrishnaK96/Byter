@@ -9,22 +9,56 @@
 import Foundation
 
 class HexNumber {
-    var num: UInt8
-    var test: String
+    private var hexNum: Int
+    private var decNum: Int
+    private var userInput: String
     
-    //initialization
+    //initializers
     init() {
-        num = 0x0000
-        test = ""
+        hexNum = 0x0
+        decNum = 0
+        userInput = ""
     }
     
-    init(userInput: String) {
-        num = 0x0
-        test = userInput
+    convenience init(userInput: String) {
+        self.init()
+        self.userInput = userInput
     }
     
-    func getTest() -> String {
-        return test
+    func formatUserInput() {
+        userInput = userInput.uppercaseString
     }
     
+    //Getters and setters
+    func getHexNum() -> Int {
+        return hexNum
+    }
+    
+    func getDecNum() -> Int {
+        return decNum
+    }
+    
+    func setHexNum(num: Int) {
+        hexNum = num
+    }
+    
+    func setDecNum(num: Int) {
+        decNum = num
+    }
+    
+    //converts var userInput to decNum (hex to decimal)
+    func convertToDec() {
+        //THIS WORKS
+        setDecNum(Int(strtoul(userInput, nil, 16)))
+    }
+    
+    //converts var userInput to hexNum (decimal to hex)
+    //has to return a value because can't convert str to an int
+    func convertToHex() -> String {
+        
+        let num = Int(userInput)
+        let str = String(num!, radix: 16)
+        
+        return str.uppercaseString
+    }
 }
