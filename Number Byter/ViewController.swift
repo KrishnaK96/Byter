@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var minusButtonPressed: Bool = false
     var dec2BinButton: Bool = true
     var bin2DecButton: Bool = false
+    var dec2HexButton: Bool = false
     var tempString: String = "" //used to store user inputted number before adding a "-""
     
     @IBOutlet var textField: UITextField!
@@ -26,13 +27,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case 0:
             dec2BinButton = true
             bin2DecButton = false
+            dec2HexButton = false
             print("Converting decimal to binary")
             
             //binary to decimal
         case 1:
             dec2BinButton = false
             bin2DecButton = true
+            dec2HexButton = false
             print("converting binary to decimal")
+        case 2:
+            dec2BinButton = false
+            bin2DecButton = false
+            dec2HexButton = true
+            print("converting decimal to hex")
         default:
             break
         }
@@ -47,7 +55,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 negaDecToBin()
             }
         } else if bin2DecButton {
-            resultField.text = String(convertFromBintoDec(textField.text!))
+            resultField.text = String(convertFromBintoDec(getInput()))
+        } else if dec2HexButton {
+            let newHexNum = HexNumber(userInput: textField.text!)
+            resultField.text = newHexNum.getTest()
         }
     }
     
@@ -77,8 +88,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //gets the users input and converts it to an integer
-    func getInput()-> Int {
-        return Int(textField.text!)!
+    func getInput()-> String {
+        if !(textField.text?.isEmpty)!{
+            return textField.text!
+        } else {
+            return ""
+        }
     }
     
     //does the math that converts a number from decimal to binary
@@ -93,8 +108,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     //runs the process of converting from decimal to binary
     func decToBin() -> String {
-        let input = getInput()
-        var binaryNumber = convertFromDecToBin(input)
+        let input = Int(getInput())
+        var binaryNumber = convertFromDecToBin(input!)
         //print(binaryNumber)
         binaryNumber = formatBinaryNumber(binaryNumber)
         return binaryNumber
