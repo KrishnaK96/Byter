@@ -49,15 +49,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Krishna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt5-mx-kFr">
-                                <rect key="frame" x="106" y="707" width="172" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zlk-EO-PBL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1l-Zv-4Nq">
                                 <rect key="frame" x="94" y="293" width="300" height="20"/>
                                 <constraints>
@@ -120,15 +111,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c4Q-fd-Za3" firstAttribute="leading" secondItem="dYP-M2-TYE" secondAttribute="leading" id="5Q1-Os-sdG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pt5-mx-kFr" secondAttribute="bottom" constant="8" symbolic="YES" id="5k4-wy-3Cn"/>
-                            <constraint firstItem="Pt5-mx-kFr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="86" id="8PV-iZ-4Qo"/>
                             <constraint firstItem="dYP-M2-TYE" firstAttribute="top" secondItem="c4Q-fd-Za3" secondAttribute="bottom" constant="8" symbolic="YES" id="Gwj-wf-H30"/>
                             <constraint firstItem="Y5L-lv-t2Z" firstAttribute="centerX" secondItem="laI-TI-th5" secondAttribute="centerX" id="Jk8-FI-cu4"/>
                             <constraint firstItem="dYP-M2-TYE" firstAttribute="leading" secondItem="dS8-E7-THf" secondAttribute="leading" id="Kd0-dH-wmW"/>
                             <constraint firstItem="a1l-Zv-4Nq" firstAttribute="top" secondItem="dS8-E7-THf" secondAttribute="bottom" constant="-21" id="Ooq-96-jgW"/>
                             <constraint firstItem="a2t-hT-9Gv" firstAttribute="leading" secondItem="dYP-M2-TYE" secondAttribute="trailing" constant="8" symbolic="YES" id="Qnr-OB-r6J"/>
                             <constraint firstItem="laI-TI-th5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TS0-or-Es9"/>
-                            <constraint firstItem="a2t-hT-9Gv" firstAttribute="centerX" secondItem="Pt5-mx-kFr" secondAttribute="centerX" constant="179.5" id="VVq-Np-nll"/>
                             <constraint firstAttribute="trailing" secondItem="laI-TI-th5" secondAttribute="trailing" id="Zjr-Hh-GI2"/>
                             <constraint firstItem="c4Q-fd-Za3" firstAttribute="top" secondItem="laI-TI-th5" secondAttribute="bottom" constant="53" id="iG9-xa-IoM"/>
                             <constraint firstItem="a1l-Zv-4Nq" firstAttribute="leading" secondItem="dS8-E7-THf" secondAttribute="leading" constant="74" id="j7q-kb-b2V"/>
