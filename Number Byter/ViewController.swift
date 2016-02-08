@@ -61,7 +61,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //runs the appropriate functions to convert a decimal number
     func convertFromDecimal() {
         let newDecNum = Number()
-        if !newDecNum.checkInput(getInput()){       //check user input
+        let checkCharacters = "1234567890"
+        if !newDecNum.checkInput(getInput(), checkCharacters: checkCharacters){       //check user input
             newDecNum.setDecNum(0)
         } else {
             newDecNum.setUserInput(getInput())
@@ -93,14 +94,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //runs the appropriate functions to convert a hex number
     func convertFromHex() {
-        let newHexNum = hexNum(userInput: getInput())
+        //let newHexNum = hexNum(userInput: getInput())
+        let newHexNum = hexNum()
+        let checkCharacters = "1234567890abcdef"    //characters that the user can input
+        if !newHexNum.checkInput(getInput(), checkCharacters: checkCharacters){       //check user input
+            newHexNum.setUserInput("0")
+        } else {
+            newHexNum.setUserInput(getInput())
+        }
         newHexNum.hexConvertToDec()
         resultField.text = "\(newHexNum.getDecNum())"   //convert hex to decimal
         
         newHexNum.hexConvertToBin()
         binResultField.text = "\(newHexNum.getBinNum())"    //convert hex to binary
         
-        hexResultField.text = "\(newHexNum.getUserInput())" //display hex number
+        hexResultField.text = "\(newHexNum.getUserInput().uppercaseString)" //display hex number
     }
     
     func getInput() -> String{

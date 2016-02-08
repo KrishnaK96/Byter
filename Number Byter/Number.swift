@@ -66,9 +66,10 @@ class Number {
     }
 
     //checks if string contains anything other than a number
-    func checkInput(userInput: String) -> Bool {
-        let arr = Array(userInput.characters)
-        let numberArr = Array("1234567890".characters)
+    //checkCharacters parameter determines the characters that are acceptible for the user to input
+    func checkInput(userInput: String, checkCharacters: String) -> Bool {
+        let arr = Array(userInput.lowercaseString.characters)
+        let numberArr = Array(checkCharacters.characters)
         if userInput.isEmpty {
             return false
         }
