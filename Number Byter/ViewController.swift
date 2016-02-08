@@ -58,10 +58,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    //runs the appropriate functions to convert a decimal number
     func convertFromDecimal() {
-        let newDecNum = Number(userInput: getInput())
-        newDecNum.setDecNum(Int(newDecNum.getUserInput())!)
+        let newDecNum = Number()
+        if !newDecNum.checkInput(getInput()){       //check user input
+            newDecNum.setDecNum(0)
+        } else {
+            newDecNum.setUserInput(getInput())
+            newDecNum.setDecNum(Int(newDecNum.getUserInput())!)
+        }
         
         resultField.text = "\(newDecNum.getDecNum())"   //display decimal number
         
@@ -73,6 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //runs the appropriate functions to convert a binary number
     func convertFromBinary() {
         let newBinNum = BinNum(userInput: getInput())
         newBinNum.binConvertToDec()
@@ -85,6 +91,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //runs the appropriate functions to convert a hex number
     func convertFromHex() {
         let newHexNum = hexNum(userInput: getInput())
         newHexNum.hexConvertToDec()
@@ -126,6 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+
 
 }
 

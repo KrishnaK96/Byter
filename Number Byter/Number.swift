@@ -65,7 +65,20 @@ class Number {
         return self.binNum
     }
 
-
+    //checks if string contains anything other than a number
+    func checkInput(userInput: String) -> Bool {
+        let arr = Array(userInput.characters)
+        let numberArr = Array("1234567890".characters)
+        if userInput.isEmpty {
+            return false
+        }
+        for character in arr {
+            if !numberArr.contains(character) {
+                return false
+            }
+        }
+        return true
+    }
     
     //converts decimal to hex
     func DecConvertToHex(){
