@@ -10,6 +10,7 @@
 		6B0AC3781C66D8160025BBB8 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0AC3771C66D8160025BBB8 /* Number.swift */; };
 		6B1B216C1C66EB8D00DC9E55 /* HexNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B216B1C66EB8D00DC9E55 /* HexNum.swift */; };
 		6B1B216E1C66EC7C00DC9E55 /* BinNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B216D1C66EC7C00DC9E55 /* BinNum.swift */; };
+		6BABCFBC1C69402100875305 /* settings-icon-copy40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BABCFBB1C69402100875305 /* settings-icon-copy40.png */; };
 		6BE93CA81C62431800A0906D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93CA71C62431800A0906D /* AppDelegate.swift */; };
 		6BE93CAA1C62431800A0906D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE93CA91C62431800A0906D /* ViewController.swift */; };
 		6BE93CAD1C62431800A0906D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE93CAB1C62431800A0906D /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		6B0AC3771C66D8160025BBB8 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		6B1B216B1C66EB8D00DC9E55 /* HexNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNum.swift; sourceTree = "<group>"; };
 		6B1B216D1C66EC7C00DC9E55 /* BinNum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinNum.swift; sourceTree = "<group>"; };
+		6BABCFBB1C69402100875305 /* settings-icon-copy40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon-copy40.png"; path = "Assets/settings-icon-copy40.png"; sourceTree = "<group>"; };
 		6BE93CA41C62431800A0906D /* Number Byter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Number Byter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE93CA71C62431800A0906D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE93CA91C62431800A0906D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				6BE93CA61C62431800A0906D /* Number Byter */,
 				6BE93CA51C62431800A0906D /* Products */,
+				6BABCFBB1C69402100875305 /* settings-icon-copy40.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +136,7 @@
 			files = (
 				6BE93CB21C62431800A0906D /* LaunchScreen.storyboard in Resources */,
 				6BE93CAF1C62431800A0906D /* Assets.xcassets in Resources */,
+				6BABCFBC1C69402100875305 /* settings-icon-copy40.png in Resources */,
 				6BE93CAD1C62431800A0906D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,10 +28,6 @@ class Number {
     }
     
     //Getters and setters
-
-//    func formatUserInput() {
-//        userInput = userInput.uppercaseString
-//    }
     
     func getUserInput() -> String {
         return userInput
